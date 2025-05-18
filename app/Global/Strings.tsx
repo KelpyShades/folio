@@ -93,7 +93,7 @@ export const Content = {
     ],
   },
   Skills: {
-    title: 'Tools and skills I bring to the table',
+    title: 'Tech stack i am familiar with',
     skills: [
       {
         id: 1,

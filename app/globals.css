@@ -10,6 +10,7 @@
   --borders: #d4d4d4;
   --accent: #525252;
   --text: #0a0a0a; */
+
   --primary: #000000;
   --secondary: #171717;
   --tertiary: #262626;
@@ -17,6 +18,8 @@
   --accent: #a3a3a3;
   --text: #fafafa;
   --radius: 0.625rem;
+
+
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);

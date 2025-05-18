@@ -27,12 +27,11 @@ const AboutMeContainer = () => {
         rel="noopener noreferrer"
         className="bg-borders shadow-custom flex h-[4rem] w-fit items-center justify-center gap-2.5 rounded-2xl px-12 py-2 font-mono text-[1.3rem] lg:text-[1.3rem] sm:text-[1.8rem] transition-all duration-700"
       >
-        Download CV
+        Download My CV
         <FaDownload />
       </a>
       {/* <HeroIntro /> */}
       {/* <CarouselClient /> */}
-
     </div>
   );
 };
