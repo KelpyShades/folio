@@ -4,7 +4,7 @@ import React from 'react';
 
 const ExperienceContainer = () => {
   return (
-    <div id='experience' className="bg-secondary hover:border-accent border-borders text-text flex flex-col gap-10 rounded-4xl border-2 px-6 py-20 opacity-75 transition-colors duration-700 ease-in-out ">
+    <div id='experience' className="bg-secondary hover:border-accent border-borders text-text flex flex-col gap-10 rounded-4xl border-2 px-6 pt-30 pb-10 opacity-75 transition-colors duration-700 ease-in-out ">
       <section className="flex flex-col gap-20 font-mono">
         <article className="flex flex-col gap-8">
           <div className="flex flex-col gap-4">
@@ -15,7 +15,7 @@ const ExperienceContainer = () => {
             {Content.Experience.experience.map((experience) => (
               <div key={experience.title} className="flex flex-col gap-4">
                 <h2 className="text-2xl lg:text-2xl sm:text-3xl font-bold ">{experience.title}</h2>
-                <p className="text-2xl lg:text-2xl sm:text-3xl text-accent">{experience.desc}</p>
+                <p className="text-2xl hover:text-white transition-colors duration-300 ease-in-out lg:text-2xl sm:text-3xl text-accent">{experience.desc}</p>
               </div>
             ))}
 

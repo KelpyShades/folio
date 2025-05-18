@@ -7,7 +7,7 @@ import { FaDownload } from 'react-icons/fa';
 
 const AboutMeContainer = () => {
   return (
-    <div id='about' className="bg-secondary hover:border-accent border-borders text-text flex flex-col gap-15 rounded-4xl border-2 px-6 py-20 opacity-75 transition-colors duration-700 ease-in-out ">
+    <div id='about' className="bg-secondary hover:border-accent border-borders text-text flex flex-col gap-15 rounded-4xl border-2 px-6 pt-30 pb-10 opacity-75 transition-colors duration-700 ease-in-out ">
       <section className="flex flex-col gap-20 font-mono">
         <article className="flex flex-col gap-8">
           <div className="flex flex-col gap-4">

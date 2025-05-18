@@ -54,7 +54,7 @@ export const Profile = {
 
 export const Content = {
   About: {
-    title: 'About Kelvin',
+    title: '~$ About Kelvin',
     paragraphs: [
       {
         id: 1,
@@ -68,73 +68,33 @@ export const Content = {
 
   },
   Experience: {
-    title: 'My Experience',
+    title: '~$ My Experience',
     experience: [
       {
-        title: 'Founder, 404-Not-Null (Current)',
+        title: '> Founder, 404-Not-Null (Current)',
         desc: 'I teamed up with friends to launch a startup, 404-Not-Null, focused on creating solutions for real-world issues. Our first project, Class-io, tackles the hassle of paper-based attendance by digitizing it into an efficient system and we have more projects in the pipeline. As a founder, I’ve stepped up to lead and manage the team, gaining skills in communication, cooperation, and project management. I’m excited to grow this into something big and impactful.',
       },
       {
-        title: 'Frontend Developer Intern, Guru Coding Academy (October - December 2023)',
+        title: '> Frontend Developer Intern, Guru Coding Academy (October - December 2023)',
         desc: 'I joined a 3-month internship where I worked on frontend development projects. It was a great chance to dive into software development, collaborate with a team, and get hands-on experience meeting real deadlines. I’m eager to keep building my skills in this field.',
       },
       {
-        title: 'Class Projects & Technical Skills',
+        title: '> Class Projects & Technical Skills',
         desc: 'Through school, I’ve worked on projects using Java, C++, VB.net, C#, and MySQL. From coding Windows Forms applications to managing databases, these experiences have strengthened my programming and problem-solving abilities.',
       },
       {
-        title: 'Vice President, Knust SHS Robotics Club (2019-2022)',
+        title: '> Vice President, Knust SHS Robotics Club (2019-2022)',
         desc: 'Starting as a member and rising to Vice President, I led my team in STEM projects and inspired others to explore IT. In my final year, we won the Best Solar Project at the National STEM Novation Competition 2022, a highlight of my leadership and teamwork journey.',
       },
       {
-        title: 'Volunteer, D & H Heavy Duty Mechanics Company Limited (October - December 2022)',
+        title: '> Volunteer, D & H Heavy Duty Mechanics Company Limited (October - December 2022)',
         desc: 'As an apprentice volunteer, I handled routine maintenance on equipment and vehicles. Working with the team taught me the importance of detail and collaboration in getting the job done.',
       },
     ],
   },
   Skills: {
-    title: 'Tech stack i am familiar with',
-    skills: [
-      {
-        id: 1,
-        skill: 'Web Development: ', 
-        tech: 'Next.js (React, TypeScript), Tailwind CSS, SCSS',
-      },
-      {
-        id: 2,
-        skill: 'Mobile Development: ',
-        tech: 'Flutter (Dart)',
-      },
-      {
-        id: 3,
-        skill: 'Database: ',
-        tech: 'SQL, PostgreSQL',
-      },
-      {
-        id: 4,
-        skill: 'Backend Services: ',
-        tech: 'Firebase, Supabase, Clerk',
-      },
-      {
-        id: 5,
-        skill: 'Automation: ',
-        tech: 'n8n, Zapier',
-      },
-      {
-        id: 6,
-        skill: 'Design: ',
-        tech: 'Figma (UI/UX), Penpot, Sketching',
-      },
-      {
-        id: 7,
-        skill: 'Other: ',
-        tech: 'Software Testing, Collaboration, Communication, Management, Planning',
-      },
-    ],
-  },
-  Education: {
-    title: 'My Education',
-    desc: 'I am a software engineer with a passion for building scalable and efficient systems. I am currently working as a software engineer at Google and Im looking for new opportunities.',
+    title: '~$ Tech stack i am familiar with',
+    desc: 'Primarily focused on Flutter for mobile apps and Next.js for web apps and sites but i am also prficient in other technologies and i am always eager to explore and learn new ones.',
   },
 };
 
