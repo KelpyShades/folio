@@ -10,7 +10,7 @@ const Content = () => {
   return (
     <aside className="flex lg:w-[calc(95dvw-33rem)] w-[95dvw] flex-col gap-10 lg:ml-[33rem] lg:flex-1 lg:p-4">
       <header className="hidden px-4 lg:block">
-        <nav>
+        <nav className='animate-fadeLeft opacity-0'>
           <ul className="flex gap-4">
             <li>
               <a className="nav-links" href="#about">

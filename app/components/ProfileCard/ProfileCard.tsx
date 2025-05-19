@@ -12,7 +12,7 @@ import x from '@/app/assets/svgs/x.svg';
 
 const ProfileCard = () => {
   return (
-    <aside className="bg-secondary hover:border-accent border-borders flex max-h-[96dvh] min-h-[95dvh] w-[95dvw] flex-col justify-center gap-20 sm:gap-25 rounded-4xl border-2 p-8 sm:p-30 lg:p-8 transition-colors duration-700 ease-in-out lg:fixed lg:max-h-[96dvh] lg:min-h-[95dvh] lg:w-[32rem] lg:gap-10 xl:gap-20">
+    <aside className="bg-secondary opacity-0 animate-fadeRight hover:border-accent border-borders flex max-h-[96dvh] min-h-[95dvh] w-[95dvw] flex-col justify-center gap-20 sm:gap-25 rounded-4xl border-2 p-8 sm:p-30 lg:p-8 transition-colors duration-700 ease-in-out lg:fixed lg:max-h-[96dvh] lg:min-h-[95dvh] lg:w-[32rem] lg:gap-10 xl:gap-20">
       <div className="flex flex-col items-center gap-8">
         {/* profile data */}
         <figure className="flex items-center justify-center">
