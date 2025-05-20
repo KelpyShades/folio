@@ -14,7 +14,7 @@ import Theme from '@/app/Global/Theme';
 const ProfileCard = () => {
   return (
     <aside className="relative bg-secondary-light dark:bg-secondary lg:opacity-0 lg:animate-fadeRight hover:border-tertiary dark:hover:border-accent border-borders-light dark:border-borders flex max-h-[96dvh] min-h-[95dvh] w-[95dvw] flex-col justify-center gap-20 sm:gap-25 rounded-4xl border-2 p-8 sm:p-30 lg:p-8 transition-colors duration-700 ease-in-out lg:fixed lg:max-h-[96dvh] lg:min-h-[95dvh] lg:w-[32rem] lg:gap-10 xl:gap-20">
-        <Theme className='block absolute top-4 right-4 lg:hidden sm:p-5' />
+      <Theme className='block absolute top-4 right-4 lg:hidden sm:p-5' />
       <div className="flex flex-col items-center gap-8">
         {/* profile data */}
         <figure className="flex items-center justify-center">
