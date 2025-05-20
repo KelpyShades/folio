@@ -5,36 +5,40 @@ import AboutMeContainer from './About/AboutMeContainer';
 import ExperienceContainer from './About/ExperienceContainer';
 import SkillContiner from './About/SkillContiner';
 import GithubGraph from './About/GithubGraph';
+import Theme from '@/app/Global/Theme';
 
 const Content = () => {
   return (
-    <aside className="flex lg:w-[calc(95dvw-33rem)] w-[95dvw] flex-col gap-10 lg:ml-[33rem] lg:flex-1 lg:p-4">
-      <header className="hidden px-4 lg:block">
-        <nav className='animate-fadeLeft opacity-0'>
-          <ul className="flex gap-4">
-            <li>
-              <a className="nav-links" href="#about">
-                About Me
-              </a>
-            </li>
-            <li>
-              <a className="nav-links" href="#experience">
-                Experience
-              </a>
-            </li>
-            <li>
-              <a className="nav-links" href="#skills">
-                Skills
-              </a>
-            </li>
-            <li>
-              <a className="nav-links" href="#portfolio">
-                Portfolio
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </header>
+    <main className="flex w-[95dvw] flex-col gap-10 lg:ml-[33rem] lg:w-[calc(95dvw-33rem)] lg:flex-1 lg:p-4">
+      <div className='flex justify-between items-center'>
+        <header className="hidden px-4 lg:block">
+          <nav className="animate-fadeLeft opacity-0">
+            <ul className="flex gap-4">
+              <li>
+                <a className="nav-links" href="#about">
+                  About Me
+                </a>
+              </li>
+              <li>
+                <a className="nav-links" href="#experience">
+                  Experience
+                </a>
+              </li>
+              <li>
+                <a className="nav-links" href="#skills">
+                  Skills
+                </a>
+              </li>
+              <li>
+                <a className="nav-links" href="#portfolio">
+                  Portfolio
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+        <Theme className='hidden lg:block' />
+      </div>
       <AboutMeContainer />
       <ExperienceContainer />
       <SkillContiner />
@@ -43,9 +47,9 @@ const Content = () => {
         <SkillContiner />
         <SkillContiner />
       </div> */}
-        <GithubGraph />
+      <GithubGraph />
       {/* <PortfolioContainer /> */}
-    </aside>
+    </main>
   );
 };
 

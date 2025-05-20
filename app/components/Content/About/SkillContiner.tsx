@@ -6,7 +6,7 @@ import CarouselClient from './Carousel';
 
 const SkillContiner = () => {
   return (
-    <div id='skills' className="bg-secondary w-full  hover:border-accent border-borders text-text flex flex-col gap-15 rounded-4xl border-2 px-6 pt-30 pb-10 opacity-75 transition-colors duration-700 ease-in-out">
+    <div id='skills' className="bg-secondary w-full hover:border-primary dark:hover:border-accent border-borders text-text flex flex-col gap-15 rounded-4xl border-2 px-6 pt-30 pb-10 opacity-90 transition-colors duration-700 ease-in-out">
       <CarouselClient />
       <section className="flex flex-col gap-20 font-mono">
         <article className="flex flex-col gap-8">
