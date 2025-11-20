@@ -7,21 +7,21 @@
 // } from '@/components/ui/carousel';
 import Image from 'next/image';
 import Marquee from 'react-fast-marquee';
-import clerk from '@/app/assets/svgs/clerk.svg';
-import figma from '@/app/assets/svgs/figma.svg';
-import firebase from '@/app/assets/svgs/firebase.svg';
-import flutter from '@/app/assets/svgs/flutter.svg';
-import github from '@/app/assets/svgs/github.svg';
-import mysql from '@/app/assets/svgs/mysql.svg';
-import n8n from '@/app/assets/svgs/n8n.svg';
-import nextjs from '@/app/assets/svgs/nextjs.svg';
-import postgresql from '@/app/assets/svgs/postgresql.svg';
-import react from '@/app/assets/svgs/reactjs.svg';
-import scss from '@/app/assets/svgs/scss.svg';
-import supabase from '@/app/assets/svgs/supabase.svg';
-import tailwind from '@/app/assets/svgs/tailwind.svg';
-import typescript from '@/app/assets/svgs/typescript.svg';
-import zapier from '@/app/assets/svgs/zapier.svg';
+import clerk from '../../../assets/svgs/clerk.svg';
+import figma from '../../../assets/svgs/figma.svg';
+import firebase from '../../../assets/svgs/firebase.svg';
+import flutter from '../../../assets/svgs/flutter.svg';
+import github from '../../../assets/svgs/github.svg';
+import mysql from '../../../assets/svgs/mysql.svg';
+import n8n from '../../../assets/svgs/n8n.svg';
+import nextjs from '../../../assets/svgs/nextjs.svg';
+import postgresql from '../../../assets/svgs/postgresql.svg';
+import react from '../../../assets/svgs/reactjs.svg';
+import scss from '../../../assets/svgs/scss.svg';
+import supabase from '../../../assets/svgs/supabase.svg';
+import tailwind from '../../../assets/svgs/tailwind.svg';
+import typescript from '../../../assets/svgs/typescript.svg';
+import zapier from '../../../assets/svgs/zapier.svg';
 
 const CarouselClient = () => {
   const technologies = [
@@ -44,7 +44,13 @@ const CarouselClient = () => {
 
   return (
     <div>
-      <Marquee aria-label="Technologies" gradient={true} gradientColor={'#171717'} gradientWidth={150} speed={50}>
+      <Marquee
+        aria-label="Technologies"
+        gradient={true}
+        gradientColor={'#171717'}
+        gradientWidth={150}
+        speed={50}
+      >
         <ul className="flex list-none gap-8">
           {technologies.map((tech) => (
             <li key={tech.name} className="list-none">
