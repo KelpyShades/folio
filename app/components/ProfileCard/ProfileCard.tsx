@@ -7,9 +7,9 @@ import github from '@/app/assets/svgs/github.svg';
 import gmail from '@/app/assets/svgs/gmail.svg';
 import linkedin from '@/app/assets/svgs/linkedin.svg';
 import x from '@/app/assets/svgs/x.svg';
-import { currentYear } from '@/app/global/DateClient';
-import { Profile } from '@/app/global/Strings';
-import Theme from '@/app/global/Theme';
+import { currentYear } from '@/app/Core/DateClient';
+import { Profile } from '@/app/Core/Strings';
+import Theme from '@/app/Core/Theme';
 import BDateClient from './components/BDateClient';
 import TechStack from './TechStack';
 

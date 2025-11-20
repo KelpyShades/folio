@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 import GithubCalendar from 'react-github-calendar';
-import { currentYear } from '@/app/global/DateClient';
+import { currentYear } from '@/app/Core/DateClient';
 
 const GithubGraph = () => {
   return (

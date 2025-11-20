@@ -43,7 +43,7 @@ async function ProjectsSectionContent() {
     .from('projects')
     .select('*')
     .eq('is_featured', true);
-    
+
   if (error) {
     console.error(error);
   }

@@ -1,4 +1,4 @@
-import { Content } from '@/app/global/Strings';
+import { Content } from '@/app/Core/Strings';
 
 const ExperienceContainer = () => {
   return (
