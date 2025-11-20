@@ -1,15 +1,15 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Suspense } from 'react';
-import profile from '../../assets/images/profile2.png';
-import discord from '../../assets/svgs/discord.svg';
-import github from '../../assets/svgs/github.svg';
-import gmail from '../../assets/svgs/gmail.svg';
-import linkedin from '../../assets/svgs/linkedin.svg';
-import x from '../../assets/svgs/x.svg';
-import { currentYear } from '../../global/DateClient';
-import { Profile } from '../../global/Strings';
-import Theme from '../../global/Theme';
+import profile from '@/app/assets/images/profile2.png';
+import discord from '@/app/assets/svgs/discord.svg';
+import github from '@/app/assets/svgs/github.svg';
+import gmail from '@/app/assets/svgs/gmail.svg';
+import linkedin from '@/app/assets/svgs/linkedin.svg';
+import x from '@/app/assets/svgs/x.svg';
+import { currentYear } from '@/app/global/DateClient';
+import { Profile } from '@/app/global/Strings';
+import Theme from '@/app/global/Theme';
 import BDateClient from './components/BDateClient';
 import TechStack from './TechStack';
 

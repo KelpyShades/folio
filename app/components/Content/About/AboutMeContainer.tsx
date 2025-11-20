@@ -1,7 +1,7 @@
 // import ShinyText from '@/app/Global/ShinyText';
 
 import { FaDownload } from 'react-icons/fa';
-import { Content } from '../../../global/Strings';
+import { Content } from '@/app/global/Strings';
 
 const AboutMeContainer = () => {
   return (

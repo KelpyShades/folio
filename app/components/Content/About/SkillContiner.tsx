@@ -1,4 +1,4 @@
-import { Content } from '../../../global/Strings';
+import { Content } from '@/app/global/Strings';
 import CarouselClient from './Carousel';
 
 const SkillContiner = () => {

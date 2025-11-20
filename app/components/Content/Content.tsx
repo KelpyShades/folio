@@ -1,5 +1,5 @@
 // import { Content } from '@/app/Global/Strings';
-import Theme from '../../global/Theme';
+import Theme from '@/app/global/Theme';
 import AboutMeContainer from './About/AboutMeContainer';
 import EducationContainer from './About/EducationContainer';
 // import PortfolioContainer from './Portfolio/PortfolioContainer';
