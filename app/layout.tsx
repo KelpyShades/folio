@@ -114,7 +114,7 @@ export const metadata: Metadata = {
   category: 'Portfolio',
   classification: 'Portfolio Website',
   verification: {
-    google: 'IGUT4lBwVA2sqAOcfbee0H7agfY-ItUwAUiqc3BJNyU',
+    google: '_Kct7l0gN35OaNwgsO17dIfL9Hrd92nof5n5BuXkWiU',
   },
   other: {
     'theme-color': '#ffffff',
@@ -192,6 +192,7 @@ export default function RootLayout({
       },
     ],
   };
+
 
   return (
     <html lang="en">
