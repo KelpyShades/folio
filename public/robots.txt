@@ -5,5 +5,5 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://info-appiahkelvin.vercel.app/sitemap.xml
+Sitemap: https://kelpyshades.com/sitemap.xml
 

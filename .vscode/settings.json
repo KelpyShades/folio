@@ -1,13 +1,13 @@
 {
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.biome": "always",
-    "source.removeUnusedImports": "always",
-    "source.addMissingImports.ts": "explicit"
-  },
-  "css.lint.unknownAtRules": "ignore"
-  // "css.validate": false,
-  // "less.validate": false,
-  // "scss.validate": false
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.biome": "always",
+		"source.removeUnusedImports": "always",
+		"source.addMissingImports.ts": "explicit"
+	},
+	"css.lint.unknownAtRules": "ignore"
+	// "css.validate": false,
+	// "less.validate": false,
+	// "scss.validate": false
 }

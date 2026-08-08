@@ -1,173 +1,93 @@
-import Image from 'next/image';
-import { FaGithub, FaLink } from 'react-icons/fa6';
-import { Badge } from '@/components/ui/badge';
-import { GalleryView } from './GalleryView';
+import Image from "next/image";
+import { FaGithub, FaLink } from "react-icons/fa6";
 
-type Project = {
-  id: string;
-  name: string;
-  description: string;
-  hero_image: string;
-  gallery: string[];
-  url: string;
-  github: string;
-  technologies: string[];
-  team: string;
-  role: string;
-  start_date: string;
-  end_date: string;
-  status: string;
-  category: string;
-  is_featured: boolean;
-  key_features: string[];
-  impact: string;
+export type Project = {
+	id: string;
+	name: string;
+	snapshot: string;
+	problem: string;
+	architecture: string;
+	status: string;
+	hero_image: string;
+	url: string;
+	github: string;
+	technologies: string[];
 };
 
-function formatDate(date: string) {
-  return new Date(date).toLocaleDateString('en-US', {
-    month: 'long',
-    day: 'numeric',
-    year: 'numeric',
-  });
-}
-
 const ProjectCard = ({ project }: { project: Project }) => {
-  return (
-    <article className="bg-secondary animate-fadeUp2 hover:border-primary dark:hover:border-accent border-borders text-text h-project-card-clamp flex w-full flex-col justify-between gap-10 rounded-4xl border-2 p-4 pb-8 opacity-0 transition-colors duration-700 ease-in-out">
-      <figure className="relative h-[40%] w-full overflow-hidden rounded-3xl">
-        <Image
-          src={project.hero_image}
-          alt={`${project.name} project preview`}
-          fill
-          className="object-cover"
-        />
-      </figure>
-      <div className="flex flex-col gap-6 px-6">
-        <header className="flex items-center justify-between">
-          <h3 className="text-4xl text-white">{project.name}</h3>
-          <Badge
-            className="text-lg"
-            variant="default"
-            aria-label={`Project status: ${project.status}`}
-          >
-            {project.status}
-          </Badge>
-        </header>
-        <div className="flex flex-col gap-1">
-          <time
-            dateTime={`${project.start_date}/${project.end_date}`}
-            className="text-accent text-md"
-          >
-            {formatDate(project.start_date)} - {formatDate(project.end_date)}
-          </time>
-          <p className="text-accent text-md">
-            {project.team} - {project.role}
-          </p>
-        </div>
-        <p className="text-xl text-white">{project.description}</p>
-        <ul className="flex list-none flex-wrap gap-2" aria-label="Technologies used">
-          {project.technologies.map((technology) => (
-            <li key={technology} className="list-none">
-              <Chip label={technology} />
-            </li>
-          ))}
-        </ul>
-        <section
-          aria-label="Key features"
-          className="bg-tertiary scrollbar-hide flex max-h-[40%] w-full flex-col gap-2 overflow-y-auto rounded-2xl p-4"
-        >
-          <ul className="flex flex-col gap-2">
-            {project.key_features.map((feature) => (
-              <li key={feature} className="text-text text-md">
-                {feature}
-              </li>
-            ))}
-          </ul>
-        </section>
-        <section
-          aria-label="Project impact"
-          className="scrollbar-hide flex w-full flex-col gap-2 rounded-2xl p-4"
-        >
-          <p className="line-clamp-2">{project.impact}</p>
-        </section>
-      </div>
-      <nav
-        aria-label="Project links"
-        className="flex flex-wrap justify-evenly gap-2 justify-self-end px-6"
-      >
-        {project.github && (
-          <LinkButton
-            href={project.github}
-            label="GitHub"
-            icon={<FaGithub className="size-8 text-white" aria-hidden="true" />}
-            ariaLabel={`View ${project.name} on GitHub`}
-          />
-        )}
-        {project.gallery.length > 0 && (
-          <GalleryView gallery={project.gallery} projectName={project.name} />
-        )}
-        {project.url && (
-          <LinkButton
-            href={project.url}
-            label="Live"
-            icon={<FaLink className="size-8 text-white" aria-hidden="true" />}
-            ariaLabel={`Visit live ${project.name} project`}
-          />
-        )}
-      </nav>
-    </article>
-  );
+	return (
+		<article className="flex flex-col-reverse lg:flex-row gap-12 lg:gap-24 group pb-20 md:pb-32 border-b border-[#eaeaea] last:border-0 last:pb-0">
+			<div className="flex-1 flex flex-col justify-between">
+				<div>
+					<div className="flex items-center gap-3 mb-6">
+						<span className="w-8 h-0.5 bg-[#111]"></span>
+						<span className="font-mono text-xs font-bold text-black uppercase tracking-widest">
+							{project.status}
+						</span>
+					</div>
+					<h3 className="text-4xl md:text-5xl font-bold tracking-tight leading-none mb-2 text-black" style={{ fontFamily: 'var(--font-poppins)' }}>
+						{project.name}
+					</h3>
+					<p className="text-lg font-medium text-[#222] mb-8 italic">{project.snapshot}</p>
+
+					<div className="flex flex-col gap-6 text-base text-[#444] leading-relaxed max-w-xl mb-8">
+						<div>
+							<strong className="text-black font-mono text-[10px] uppercase tracking-wider block mb-1">The Problem</strong>
+							<p>{project.problem}</p>
+						</div>
+						<div>
+							<strong className="text-black font-mono text-[10px] uppercase tracking-wider block mb-1">The Architecture</strong>
+							<p>{project.architecture}</p>
+						</div>
+					</div>
+
+					<div className="flex flex-wrap gap-x-6 gap-y-3 mb-12">
+						{project.technologies.map((tech) => (
+							<span key={tech} className="font-mono text-xs uppercase tracking-widest font-bold text-[#555]">
+								{tech}
+							</span>
+						))}
+					</div>
+				</div>
+
+				<div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+					{project.url && (
+						<a
+							href={project.url}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="text-[#111] font-mono text-xs uppercase tracking-widest border-b-2 border-[#111] pb-1 hover:text-[#555] hover:border-[#555] transition-colors flex items-center gap-2"
+						>
+							View Platform <FaLink className="w-3 h-3" />
+						</a>
+					)}
+					{project.github && (
+						<a
+							href={project.github}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="text-[#777] font-mono text-xs uppercase tracking-widest hover:text-[#111] transition-colors flex items-center gap-2"
+						>
+							Source Code <FaGithub className="w-3 h-3" />
+						</a>
+					)}
+				</div>
+			</div>
+
+			{/* Image Section */}
+			<div className="w-full lg:w-[50%] flex items-center justify-center">
+				<div className="w-full border border-[#eaeaea] bg-white overflow-hidden">
+					<Image
+						src={project.hero_image}
+						alt={`${project.name} preview`}
+						width={1200}
+						height={800}
+						className="w-full h-auto object-cover grayscale-[0.5] hover:grayscale-0 transition-all duration-700"
+					/>
+				</div>
+			</div>
+		</article>
+	);
 };
 
 export default ProjectCard;
-
-function LinkButton({
-  href,
-  label,
-  icon,
-  ariaLabel,
-}: {
-  href: string;
-  label: string;
-  icon: React.ReactNode;
-  ariaLabel?: string;
-}) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={ariaLabel || `Visit ${label}`}
-      className="dark:bg-borders bg-primary-light text-text-light dark:text-text shadow-custom flex h-[3.2rem] w-fit items-center justify-center gap-2 rounded-2xl px-10 py-2 font-mono text-[1.1rem] transition-all duration-700 hover:scale-105 sm:text-[1.4rem] lg:text-[1.2rem]"
-    >
-      {icon}
-      <span>{label}</span>
-    </a>
-  );
-}
-
-function Chip({ label }: { label: string }) {
-  return (
-    <span
-      className="bg-borders text-text shadow-custom flex h-[2.5rem] w-fit cursor-default flex-wrap items-center justify-center rounded-md px-5 py-1 font-mono text-[1rem] transition-all duration-300 ease-in-out hover:scale-105 sm:text-[1.4rem] lg:text-[1rem]"
-      title={`Technology: ${label}`}
-    >
-      {label}
-    </span>
-  );
-}
-
-// {
-
-//
-//   gallery: [
-//     'https://lbvbtthjyvijwkiyaptu.supabase.co/storage/v1/object/public/projects/e7e204ec-76ef-4126-9ce6-e04033a33ff4/gallery/rsm0lzfwzt.png',
-//     'https://lbvbtthjyvijwkiyaptu.supabase.co/storage/v1/object/public/projects/e7e204ec-76ef-4126-9ce6-e04033a33ff4/gallery/k15tgoorxr.png',
-//     'https://lbvbtthjyvijwkiyaptu.supabase.co/storage/v1/object/public/projects/e7e204ec-76ef-4126-9ce6-e04033a33ff4/gallery/k7pkzytlbt.png',
-//     'https://lbvbtthjyvijwkiyaptu.supabase.co/storage/v1/object/public/projects/e7e204ec-76ef-4126-9ce6-e04033a33ff4/gallery/580elyhji8.png'
-//   ],
-//   url: '',
-//   github: '',
-//   category: 'crossPlatform',
-//   impact: 'huge!'
-// },

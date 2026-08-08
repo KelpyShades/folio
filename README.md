@@ -28,7 +28,7 @@ Visit the live site: [https://info-appiahkelvin.vercel.app](https://info-appiahk
 
 ### Libraries & Tools
 
-- **Database**: [Supabase](https://supabase.com/) (PostgreSQL)
+- **Database**: [Convex](https://convex.dev/) (Reactive Backend)
 - **Icons**: [Lucide React](https://lucide.dev/), [React Icons](https://react-icons.github.io/react-icons/)
 - **Carousel**: [Embla Carousel](https://www.embla-carousel.com/)
 - **Marquee**: [react-fast-marquee](https://www.react-fast-marquee.com/)
@@ -72,43 +72,17 @@ pnpm install
 Create a `.env.local` file in the root directory:
 
 ```env
-# Supabase Configuration
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
-NEXT_PUBLIC_SUPABASE_PUBLISHABLE_DEFAULT_KEY=your_supabase_anon_key
+# Convex Configuration
+NEXT_PUBLIC_CONVEX_URL=your_convex_url_here
 
 # Site Configuration (optional)
 NEXT_PUBLIC_SITE_URL=https://yourdomain.com
 ```
 
-### 4. Set up Supabase
+### 4. Set up Convex
 
-1. Create a new project at [supabase.com](https://supabase.com/)
-2. Create a `projects` table with the following schema:
-
-```sql
-CREATE TABLE projects (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  name TEXT NOT NULL,
-  description TEXT NOT NULL,
-  hero_image TEXT NOT NULL,
-  gallery TEXT[] DEFAULT '{}',
-  url TEXT DEFAULT '',
-  github TEXT DEFAULT '',
-  technologies TEXT[] DEFAULT '{}',
-  team TEXT NOT NULL,
-  role TEXT NOT NULL,
-  start_date TIMESTAMPTZ NOT NULL,
-  end_date TIMESTAMPTZ NOT NULL,
-  status TEXT NOT NULL,
-  category TEXT NOT NULL,
-  is_featured BOOLEAN DEFAULT false,
-  key_features TEXT[] DEFAULT '{}',
-  impact TEXT DEFAULT '',
-  created_at TIMESTAMPTZ DEFAULT NOW()
-);
-```
-
-3. Enable Row Level Security (RLS) and configure policies as needed
+1. Create a new project at [convex.dev](https://convex.dev/)
+2. Set up the schema in the `convex` folder (already provided in the repository) and deploy/push using `pnpm convex dev` to initialize your database tables.
 
 ### 5. Run the development server
 
@@ -141,8 +115,9 @@ folio/
 │   └── ui/              # shadcn/ui components
 ├── lib/
 │   └── utils.ts         # Utility functions
-├── utils/
-│   └── supabase/        # Supabase client utilities
+├── convex/
+│   ├── schema.ts        # Convex database schema
+│   └── projects.ts      # Convex projects query functions
 ├── public/              # Static files (favicons, manifest, etc.)
 └── README.md
 ```
@@ -196,8 +171,7 @@ The site will be automatically deployed on every push to the main branch.
 
 Make sure to set these in your deployment platform:
 
-- `NEXT_PUBLIC_SUPABASE_URL`
-- `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_DEFAULT_KEY`
+- `NEXT_PUBLIC_CONVEX_URL`
 - `NEXT_PUBLIC_SITE_URL` (optional, defaults to Vercel URL)
 
 ## 🔍 SEO & Performance
@@ -205,7 +179,7 @@ Make sure to set these in your deployment platform:
 - **Meta Tags**: Comprehensive Open Graph and Twitter Card support
 - **Structured Data**: JSON-LD schema for Person and Organization
 - **Image Optimization**: Next.js Image component with automatic optimization
-- **Caching**: Supabase queries cached for optimal performance
+- **Realtime Updates**: Convex reactive queries provide instant, real-time database state sync.
 - **Font Optimization**: Next.js font optimization for Poppins and Geist Mono
 
 ## ♿ Accessibility
@@ -233,7 +207,7 @@ This project is private and proprietary.
 
 - [shadcn/ui](https://ui.shadcn.com/) for beautiful UI components
 - [Vercel](https://vercel.com/) for hosting
-- [Supabase](https://supabase.com/) for backend infrastructure
+- [Convex](https://convex.dev/) for backend infrastructure
 - [Next.js](https://nextjs.org/) team for the amazing framework
 
 ---
