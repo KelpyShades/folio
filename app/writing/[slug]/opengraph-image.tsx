@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-import { posts } from "@/lib/posts";
+import { getSortedPostsData } from "@/lib/posts";
 
 export const alt = "Article Showcase";
 export const size = { width: 1200, height: 630 };
@@ -11,76 +11,42 @@ interface Props {
 
 export default async function Image({ params }: Props) {
 	const { slug } = await params;
+	const posts = getSortedPostsData();
 	const post = posts.find((p) => p.slug === slug);
 
 	return new ImageResponse(
 		(
 			<div
 				style={{
-					background: "#f8f4ee",
+					background: "#f4f2ee",
 					width: "100%",
 					height: "100%",
 					display: "flex",
 					flexDirection: "column",
 					justifyContent: "space-between",
 					padding: "80px",
-					border: "1px solid #eaeaea",
 				}}
 			>
-				<div style={{ display: "flex", flexDirection: "column" }}>
-					<div
-						style={{
-							fontSize: 16,
-							textTransform: "uppercase",
-							letterSpacing: "0.15em",
-							color: "#777",
-							fontWeight: "bold",
-							marginBottom: "32px",
-						}}
-					>
-						Kelvin Appiah — Writing
-					</div>
-					<div
-						style={{
-							fontSize: 52,
-							fontWeight: "bold",
-							color: "#111",
-							lineHeight: 1.25,
-							marginBottom: "24px",
-							letterSpacing: "-0.02em",
-						}}
-					>
-						{post?.title || "Article"}
-					</div>
-					<div
-						style={{
-							fontSize: 24,
-							color: "#444",
-							lineHeight: 1.5,
-							display: "-webkit-box",
-							WebkitLineClamp: 3,
-							WebkitBoxOrient: "vertical",
-							overflow: "hidden",
-						}}
-					>
-						{post?.description || ""}
-					</div>
+				<div style={{ fontSize: 28, color: "#111", fontFamily: 'sans-serif' }}>
+					Kelvin Appiah | Portfolio
 				</div>
 				<div
 					style={{
-						display: "flex",
-						justifyContent: "space-between",
-						alignItems: "center",
-						borderTop: "1px solid #eaeaea",
-						paddingTop: "32px",
+						fontSize: 72,
+						fontWeight: "900",
+						color: "#111",
+						lineHeight: 1.1,
+						letterSpacing: "-0.03em",
+						display: "-webkit-box",
+						WebkitLineClamp: 3,
+						WebkitBoxOrient: "vertical",
+						overflow: "hidden",
 					}}
 				>
-					<div style={{ fontSize: 18, color: "#555", fontWeight: "bold" }}>
-						{post?.date} · {post?.readTime}
-					</div>
-					<div style={{ fontSize: 20, fontWeight: "bold", color: "#111", letterSpacing: "0.05em" }}>
-						kelpyshades.com
-					</div>
+					{post?.title || "Article"}
+				</div>
+				<div style={{ fontSize: 36, color: "#222" }}>
+					Writing & Essays
 				</div>
 			</div>
 		),

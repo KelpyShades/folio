@@ -1,10 +1,19 @@
 import { ImageResponse } from "next/og";
+import { getSortedProjectsData } from "@/lib/projects";
 
-export const alt = "How I Work — Operating Philosophy";
+export const alt = "Project Case Study";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default async function Image() {
+interface Props {
+	params: Promise<{ slug: string }>;
+}
+
+export default async function Image({ params }: Props) {
+	const { slug } = await params;
+	const projects = getSortedProjectsData();
+	const project = projects.find((p) => p.slug === slug);
+
 	return new ImageResponse(
 		(
 			<div
@@ -28,12 +37,16 @@ export default async function Image() {
 						color: "#111",
 						lineHeight: 1.1,
 						letterSpacing: "-0.03em",
+						display: "-webkit-box",
+						WebkitLineClamp: 3,
+						WebkitBoxOrient: "vertical",
+						overflow: "hidden",
 					}}
 				>
-					My operational framework for engineering, team leadership, and product strategy.
+					{project ? `Building ${project.title}` : "Case Study"}
 				</div>
 				<div style={{ fontSize: 36, color: "#222" }}>
-					How I Work
+					{project?.title ? `${project.title} Case Study` : "Case Study"}
 				</div>
 			</div>
 		),

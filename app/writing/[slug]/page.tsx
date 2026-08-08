@@ -3,7 +3,9 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Script from 'next/script';
 import { FaChevronLeft } from 'react-icons/fa6';
-import { posts } from '@/lib/posts';
+
+import { WritingPageContent } from '@/app/Core/Strings';
+import { getPostData, getSortedPostsData, type Post } from '@/lib/posts';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://kelpyshades.com';
 
@@ -12,6 +14,7 @@ interface Props {
 }
 
 export function generateStaticParams() {
+  const posts = getSortedPostsData();
   return posts.map((post) => ({
     slug: post.slug,
   }));
@@ -19,6 +22,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
+  const posts = getSortedPostsData();
   const post = posts.find((p) => p.slug === slug);
   if (!post) return {};
 
@@ -33,28 +37,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `${siteUrl}/writing/${slug}`,
       title: post.title,
       description: post.description,
-      images: [
-        {
-          url: `/writing/${slug}/opengraph-image`,
-          width: 1200,
-          height: 630,
-          alt: post.title,
-        },
-      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: post.description,
-      images: [`/writing/${slug}/opengraph-image`],
     },
   };
 }
 
 export default async function ArticlePage({ params }: Props) {
   const { slug } = await params;
-  const post = posts.find((p) => p.slug === slug);
-  if (!post) {
+  
+  let post: Post;
+  try {
+    post = await getPostData(slug);
+  } catch {
     notFound();
   }
 
@@ -93,7 +91,7 @@ export default async function ArticlePage({ params }: Props) {
         href="/writing"
         className="mb-8 inline-flex w-fit items-center gap-2 font-mono text-[10px] font-bold tracking-widest text-[#555] uppercase transition-colors hover:text-black sm:mb-12 sm:text-xs"
       >
-        <FaChevronLeft className="h-3 w-3" /> Back to Writing
+        <FaChevronLeft className="h-3 w-3" /> {WritingPageContent.backToWritingText}
       </Link>
 
       {/* Header */}
@@ -116,7 +114,7 @@ export default async function ArticlePage({ params }: Props) {
 
       {/* Article Content */}
       <article
-        className="flex w-full max-w-195 flex-col gap-6 border-t border-[#eaeaea] pt-8 text-sm leading-relaxed font-light text-[#333] sm:pt-12 sm:text-base md:text-lg"
+        className="prose-editorial flex w-full max-w-195 flex-col border-t border-[#eaeaea] pt-8 text-sm leading-relaxed sm:pt-12 sm:text-base md:text-lg"
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
     </main>

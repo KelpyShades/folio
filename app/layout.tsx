@@ -212,10 +212,10 @@ export default function RootLayout({
 								Kelvin Appiah
 							</Link> */}
             <div className="flex gap-6 font-mono text-xs font-bold tracking-widest text-[#555] uppercase md:gap-10">
-              <Link href="/#about" className="transition-colors hover:text-black">
-                About
+              <Link href="/#home" className="transition-colors hover:text-black">
+                Home
               </Link>
-              <Link href="/#work" className="transition-colors hover:text-black">
+              <Link href="/work" className="transition-colors hover:text-black">
                 Work
               </Link>
               <Link href="/writing" className="transition-colors hover:text-black">
