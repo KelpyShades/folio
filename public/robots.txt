@@ -1,5 +1,5 @@
 # robots.txt for Kelvin Appiah Portfolio
-# https://info-appiahkelvin.vercel.app
+# https://kelpyshades.com
 
 User-agent: *
 Allow: /

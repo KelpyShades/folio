@@ -4,7 +4,7 @@ A modern, responsive portfolio website showcasing my work, experience, and skill
 
 ## 🌐 Live Demo
 
-Visit the live site: [https://info-appiahkelvin.vercel.app](https://info-appiahkelvin.vercel.app)
+Visit the live site: [https://kelpyshades.com](https://kelpyshades.com)
 
 ## ✨ Features
 
@@ -198,7 +198,7 @@ This project is private and proprietary.
 
 **Kelvin Appiah**
 
-- Portfolio: [https://info-appiahkelvin.vercel.app](https://info-appiahkelvin.vercel.app)
+- Portfolio: [https://kelpyshades.com](https://kelpyshades.com)
 - GitHub: [@KelpyShades](https://github.com/KelpyShades)
 - Founder: [404-Not-Null](https://404notnull.vercel.app)
 - Lead: [Class-io](https://class-io.vercel.app)
