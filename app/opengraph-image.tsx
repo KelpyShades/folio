@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 import { getPoppinsFonts } from '@/lib/og-fonts';
 
-export const alt = 'How I Work — Operating Philosophy';
+export const alt = 'Kelvin Appiah — Software Engineer & Product Architect';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -38,9 +38,9 @@ export default async function Image() {
           textOverflow: 'ellipsis',
         }}
       >
-        My operational framework for engineering, team leadership, and product strategy.
+        Software Engineer, Product Architect & Technical Lead
       </div>
-      <div style={{ fontSize: 36, color: '#222' }}>How I Work</div>
+      <div style={{ fontSize: 36, color: '#222' }}>Kelvin Appiah</div>
     </div>,
     {
       ...size,

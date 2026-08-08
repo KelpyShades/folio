@@ -1,5 +1,6 @@
 import { ImageResponse } from 'next/og';
 import { getSortedProjectsData } from '@/lib/projects';
+import { getPoppinsFonts } from '@/lib/og-fonts';
 
 export const alt = 'Project Case Study';
 export const size = { width: 1200, height: 630 };
@@ -13,6 +14,7 @@ export default async function Image({ params }: Props) {
   const { slug } = await params;
   const projects = getSortedProjectsData();
   const project = projects.find((p) => p.slug === slug);
+  const fonts = await getPoppinsFonts();
 
   return new ImageResponse(
     <div
@@ -24,15 +26,16 @@ export default async function Image({ params }: Props) {
         flexDirection: 'column',
         justifyContent: 'space-between',
         padding: '80px',
+        fontFamily: 'Poppins',
       }}
     >
-      <div style={{ fontSize: 28, color: '#111', fontFamily: 'sans-serif' }}>
+      <div style={{ fontSize: 28, color: '#111' }}>
         Kelvin Appiah | Portfolio
       </div>
       <div
         style={{
           fontSize: 72,
-          fontWeight: '900',
+          fontWeight: 700,
           color: '#111',
           lineHeight: 1.1,
           letterSpacing: '-0.03em',
@@ -49,6 +52,9 @@ export default async function Image({ params }: Props) {
         {project?.title ? `${project.title} Case Study` : 'Case Study'}
       </div>
     </div>,
-    { ...size }
+    {
+      ...size,
+      fonts,
+    }
   );
 }
