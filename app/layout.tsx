@@ -89,7 +89,7 @@ export const metadata: Metadata = {
     description:
       'Portfolio of Kelvin Appiah - Self-taught Software Engineer, Product Architect, and Technical Co-Founder & CEO at 404notnull, leading engineering for Class-io and Groveh from Kumasi, Ghana.',
     images: ['/og-image.png'],
-    creator: '@KelpyShades',
+    creator: '@appiah_kelvin_',
   },
   robots: {
     index: true,

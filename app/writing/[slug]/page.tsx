@@ -6,6 +6,7 @@ import { FaChevronLeft } from 'react-icons/fa6';
 
 import { WritingPageContent } from '@/app/Core/Strings';
 import { getPostData, getSortedPostsData, type Post } from '@/lib/posts';
+import { ShareButtons } from './ShareButtons';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://kelpyshades.com';
 
@@ -96,11 +97,16 @@ export default async function ArticlePage({ params }: Props) {
 
       {/* Header */}
       <header className="mb-10 max-w-195 sm:mb-12">
-        <div className="mb-3 flex items-center gap-4 font-mono text-[10px] text-[#777] sm:mb-4 sm:text-xs">
-          <span>{post.date}</span>
-          <span>•</span>
-          <span>{post.readTime}</span>
+        <div className="mb-4 flex flex-wrap items-center justify-between gap-x-6 gap-y-2 border-b border-[#eaeaea] pb-4 font-mono text-[10px] text-[#777] sm:text-xs">
+          <div className="flex items-center gap-3">
+            <span>{post.date}</span>
+            <span>•</span>
+            <span>{post.readTime}</span>
+          </div>
+
+          <ShareButtons title={post.title} url={`${siteUrl}/writing/${slug}`} />
         </div>
+
         <h1
           className="mb-4 text-2xl font-bold tracking-tight text-[#111] sm:mb-6 sm:text-3xl md:text-4xl lg:text-5xl"
           style={{ fontFamily: 'var(--font-poppins)' }}
