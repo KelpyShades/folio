@@ -208,7 +208,7 @@ export default function RootLayout({
 
         {/* NAVIGATION HEADER */}
         <header className="sticky top-0 z-50 w-full border-b border-[#eaeaea]/40 bg-[#f8f4ee]/80 backdrop-blur-md">
-          <nav className="mx-auto flex w-full max-w-350 items-center justify-end px-6 py-6 md:px-12">
+          <nav className="mx-auto flex w-full max-w-350 items-center justify-end px-6 py-4 md:px-12 md:py-6">
             {/* <Link href="/" className="hidden sm:flex font-bold tracking-tight text-lg" style={{ fontFamily: 'var(--font-poppins)' }}>
 								Kelvin Appiah
 							</Link> */}

@@ -26,7 +26,7 @@ export default async function Home() {
       {/* HERO SECTION */}
       <section id="home" className="flex min-h-screen flex-col justify-center md:py-24 lg:py-32">
         <div className="grid grid-cols-1 items-center gap-10 md:gap-16 lg:grid-cols-[1fr_300px]">
-          <div className="flex flex-col gap-6 sm:gap-8">
+          <div className="-mt-28 flex flex-col gap-6 sm:mt-0 sm:gap-8">
             <div className="inline-flex items-center gap-3">
               <span className="h-0.5 w-8 bg-[#111]"></span>
               <span className="font-mono text-[10px] font-bold tracking-widest text-[#111] uppercase sm:text-xs">
