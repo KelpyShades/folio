@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     template: '%s | Kelvin Appiah',
   },
   description:
-    'Self-taught Software Engineer and Technical Co-Founder & CEO at 404notnull, designing and building production software end-to-end (Class-io, Groveh) from Kumasi, Ghana.',
+    'Self-taught Software Engineer and Technical Co-Founder & CEO at 404-Not-Null, designing and building production software end-to-end (Class-io, Groveh) from Kumasi, Ghana.',
   keywords: [
     'Kelvin Appiah',
     'Appiah Kelvin',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     'Kelpy Shades developer',
     'Kelpy Shades founder',
     'Kelvin Appiah founder',
-    '404notnull',
+    '404-Not-Null',
     '404-Not-Null',
     '404-Not-Null lead',
     '404-Not-Null founder',
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     siteName: siteName,
     title: 'Kelvin Appiah - Software Engineer, Product Architect & Technical Lead',
     description:
-      'Portfolio of Kelvin Appiah - Self-taught Software Engineer, Product Architect, and Technical Co-Founder & CEO at 404notnull, leading engineering for Class-io and Groveh from Kumasi, Ghana.',
+      'Portfolio of Kelvin Appiah - Self-taught Software Engineer, Product Architect, and Technical Co-Founder & CEO at 404-Not-Null, leading engineering for Class-io and Groveh from Kumasi, Ghana.',
     images: [
       {
         url: '/og-image.png',
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Kelvin Appiah - Software Engineer, Product Architect & Technical Lead',
     description:
-      'Portfolio of Kelvin Appiah - Self-taught Software Engineer, Product Architect, and Technical Co-Founder & CEO at 404notnull, leading engineering for Class-io and Groveh from Kumasi, Ghana.',
+      'Portfolio of Kelvin Appiah - Self-taught Software Engineer, Product Architect, and Technical Co-Founder & CEO at 404-Not-Null, leading engineering for Class-io and Groveh from Kumasi, Ghana.',
     images: ['/og-image.png'],
     creator: '@appiah_kelvin_',
   },
@@ -136,7 +136,7 @@ export default function RootLayout({
         name: 'Kelvin Appiah',
         jobTitle: 'Software Engineer, Product Architect & Technical Lead',
         description:
-          'Self-taught Software Engineer and Technical Co-Founder & CEO at 404notnull, leading engineering and product for Class-io and Groveh.',
+          'Self-taught Software Engineer and Technical Co-Founder & CEO at 404-Not-Null, leading engineering and product for Class-io and Groveh.',
         url: siteUrl,
         address: {
           '@type': 'PostalAddress',
@@ -163,8 +163,8 @@ export default function RootLayout({
         memberOf: [
           {
             '@type': 'Organization',
-            name: '404notnull',
-            url: 'https://404notnull.vercel.app',
+            name: '404-Not-Null',
+            url: 'https://404-Not-Null.vercel.app',
           },
           {
             '@type': 'Organization',
@@ -192,7 +192,6 @@ export default function RootLayout({
       },
     ],
   };
-
 
   return (
     <html lang="en">

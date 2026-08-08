@@ -12,18 +12,18 @@ export const HeroContent = {
     alt: 'Kelvin Appiah',
   },
   description:
-    'Self-taught, based in Kumasi, Ghana, in my final year of a Computer Science degree. Currently Technical Co-Founder & CEO at 404notnull, leading engineering and product for two live platforms: Class-io and Groveh.',
+    'Self-taught, based in Kumasi, Ghana, in my final year of a Computer Science degree. Currently Technical Co-Founder & CEO at 404-Not-Null, leading engineering and product for two live platforms: Class-io and Groveh.',
   links: [
     {
       label: '404-Not-Null ↗',
-      href: 'https://404notnull.vercel.app',
+      href: 'https://404-Not-Null.vercel.app',
     },
     {
       label: 'Github ↗',
       href: 'https://github.com/KelpyShades',
     },
     {
-      label: 'CV ↗',
+      label: 'Résumé ↗',
       href: 'https://drive.google.com/file/d/1nx6WntYGxcB_fMMc1Kt2ZkTzQcbpHU2l/view?usp=sharing',
     },
   ],
@@ -36,13 +36,13 @@ export const AboutContent = {
       title: 'Self-Taught & Technical Progression',
       paragraphs: [
         'My engineering journey is self-taught, progressing from Vanilla HTML/CSS/JS and SASS to Dart, Flutter, TypeScript, Tailwind CSS, Next.js, and Expo. I handle production software end-to-end: system architecture, implementation, and operations.',
-        'I balance a full-time BSc Computer Science degree while architecting and running 404notnull, keeping engineering focused on reliable execution and maintainable code.',
+        'I balance a full-time BSc Computer Science degree while architecting and running 404-Not-Null, keeping engineering focused on reliable execution and maintainable code.',
       ],
     },
     {
-      title: '404notnull & Execution',
+      title: '404-Not-Null & Execution',
       paragraphs: [
-        'As Technical Co-Founder and CEO at 404notnull, I architect the core infrastructure across our product studio and drive the engineering execution.',
+        'As Technical Co-Founder and CEO at 404-Not-Null, I architect the core infrastructure across our product studio and drive the engineering execution.',
         'We run on a strict, task-centric workflow: one owner, one output, one deadline. To support product launches on zero budget, I built an automated marketing engine that converts raw Git commits into scheduled social posts across platforms.',
       ],
     },
@@ -121,7 +121,7 @@ export const FooterContent = {
   email: 'appiahkelvin060904@gmail.com',
   links: [
     {
-      label: 'View CV ↗',
+      label: 'View Résumé ↗',
       href: 'https://drive.google.com/file/d/1nx6WntYGxcB_fMMc1Kt2ZkTzQcbpHU2l/view?usp=sharing',
       isPrimary: true,
     },
@@ -156,8 +156,6 @@ export const HowIWorkPageContent = {
   ],
 };
 
-
-
 // WRITING PAGE & ARTICLES CONTENT
 export const WritingPageContent = {
   backText: 'Back to Home',
@@ -167,5 +165,3 @@ export const WritingPageContent = {
   subtitle: 'Technical essays, engineering deep-dives, and operational notes.',
   readArticleText: 'Read Article →',
 };
-
-
