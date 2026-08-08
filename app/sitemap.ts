@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getSortedPostsData } from "@/lib/posts";
+import { getSortedProjectsData } from "@/lib/projects";
 
 export default function sitemap(): MetadataRoute.Sitemap {
 	const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://kelpyshades.com";
@@ -12,15 +13,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			priority: 1.0,
 		},
 		{
-			url: `${siteUrl}/work/class-io`,
+			url: `${siteUrl}/work`,
 			lastModified: new Date(),
-			changeFrequency: "monthly",
-			priority: 0.8,
-		},
-		{
-			url: `${siteUrl}/work/groveh`,
-			lastModified: new Date(),
-			changeFrequency: "monthly",
+			changeFrequency: "weekly",
 			priority: 0.8,
 		},
 		{
@@ -38,12 +33,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
 	];
 
 	const posts = getSortedPostsData();
-	const dynamicRoutes: MetadataRoute.Sitemap = posts.map((post) => ({
+	const postRoutes: MetadataRoute.Sitemap = posts.map((post) => ({
 		url: `${siteUrl}/writing/${post.slug}`,
-		lastModified: new Date(),
+		lastModified: post.date ? new Date(post.date) : new Date(),
 		changeFrequency: "monthly",
 		priority: 0.6,
 	}));
 
-	return [...staticRoutes, ...dynamicRoutes];
+	const projects = getSortedProjectsData();
+	const projectRoutes: MetadataRoute.Sitemap = projects.map((project) => ({
+		url: `${siteUrl}/work/${project.slug}`,
+		lastModified: new Date(),
+		changeFrequency: "monthly",
+		priority: 0.8,
+	}));
+
+	return [...staticRoutes, ...projectRoutes, ...postRoutes];
 }
