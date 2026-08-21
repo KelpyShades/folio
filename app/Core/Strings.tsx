@@ -118,7 +118,7 @@ export const BackgroundContent = {
 
 export const FooterContent = {
   title: "Let's Build.",
-  email: 'appiahkelvin060904@gmail.com',
+  email: 'hello@kelpyshades.com',
   links: [
     {
       label: 'View Résumé ↗',

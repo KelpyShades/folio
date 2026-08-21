@@ -17,35 +17,70 @@ export const metadata: Metadata = {
     url: `${siteUrl}/how-i-work`,
     title: 'How I Work — Kelvin Appiah',
     description: HowIWorkPageContent.leadParagraph,
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'How Kelvin Appiah Works — Operating Philosophy',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'How I Work — Kelvin Appiah',
     description: HowIWorkPageContent.leadParagraph,
+    images: ['/og-image.png'],
+    creator: '@KelpyShades',
   },
 };
 
 export default function HowIWork() {
   const articleJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'TechArticle',
-    headline: 'How I Work — Kelvin Appiah',
-    description: HowIWorkPageContent.leadParagraph,
-    image: `${siteUrl}/how-i-work-og.png`,
-    author: {
-      '@type': 'Person',
-      name: 'Kelvin Appiah',
-      url: 'https://kelpyshades.com',
-    },
-    publisher: {
-      '@type': 'Person',
-      name: 'Kelvin Appiah',
-      url: 'https://kelpyshades.com',
-    },
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': `${siteUrl}/how-i-work`,
-    },
+    '@graph': [
+      {
+        '@type': 'TechArticle',
+        '@id': `${siteUrl}/how-i-work#article`,
+        headline: 'How I Work — Engineering & Operational Philosophy',
+        description: HowIWorkPageContent.leadParagraph,
+        image: `${siteUrl}/og-image.png`,
+        author: {
+          '@type': 'Person',
+          '@id': `${siteUrl}/#person`,
+          name: 'Kelvin Appiah',
+          url: siteUrl,
+        },
+        publisher: {
+          '@type': 'Person',
+          '@id': `${siteUrl}/#person`,
+          name: 'Kelvin Appiah',
+          url: siteUrl,
+        },
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': `${siteUrl}/how-i-work`,
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${siteUrl}/how-i-work#breadcrumb`,
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: siteUrl,
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'How I Work',
+            item: `${siteUrl}/how-i-work`,
+          },
+        ],
+      },
+    ],
   };
 
   return (

@@ -21,7 +21,7 @@ const poppins = Poppins({
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://kelpyshades.com';
-const siteName = 'Kelvin Appiah - Portfolio';
+const siteName = 'Kelvin Appiah';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -38,23 +38,22 @@ export const metadata: Metadata = {
     'KelpyShades',
     'Kelpy Shades developer',
     'Kelpy Shades founder',
+    'Kelpy Shades co-founder',
     'Kelvin Appiah founder',
-    '404-Not-Null',
+    'Kelvin Appiah co-founder',
     '404-Not-Null',
     '404-Not-Null lead',
     '404-Not-Null founder',
+    '404-Not-Null co-founder',
+    '404-Not-Null CEO',
     'Class-io',
     'Class-io developer',
     'Class-io founder',
+    'Class-io co-founder',
     'Groveh',
     'Groveh developer',
     'Groveh founder',
-    'Convex',
-    'Supabase',
-    'H3 geospatial',
-    'Bayesian rating systems',
-    'Kumasi',
-    'Ghana',
+    'Groveh co-founder',
     'Kelvin Appiah Portfolio',
     'Kelvin Appiah Portfolio Website',
   ],
@@ -73,7 +72,7 @@ export const metadata: Metadata = {
     siteName: siteName,
     title: 'Kelvin Appiah - Software Engineer, Product Architect & Technical Lead',
     description:
-      'Portfolio of Kelvin Appiah - Self-taught Software Engineer, Product Architect, and Technical Co-Founder & CEO at 404-Not-Null, leading engineering for Class-io and Groveh from Kumasi, Ghana.',
+      'Portfolio of Kelvin Appiah (KelpyShades) - Self-taught Software Engineer, Product Architect, and Technical Co-Founder & CEO at 404-Not-Null, leading engineering for Class-io and Groveh from Kumasi, Ghana.',
     images: [
       {
         url: '/og-image.png',
@@ -87,9 +86,9 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Kelvin Appiah - Software Engineer, Product Architect & Technical Lead',
     description:
-      'Portfolio of Kelvin Appiah - Self-taught Software Engineer, Product Architect, and Technical Co-Founder & CEO at 404-Not-Null, leading engineering for Class-io and Groveh from Kumasi, Ghana.',
+      'Portfolio of Kelvin Appiah (KelpyShades) - Self-taught Software Engineer, Product Architect, and Technical Co-Founder & CEO at 404-Not-Null, leading engineering for Class-io and Groveh from Kumasi, Ghana.',
     images: ['/og-image.png'],
-    creator: '@appiah_kelvin_',
+    creator: '@KelpyShades',
   },
   robots: {
     index: true,
@@ -134,48 +133,69 @@ export default function RootLayout({
         '@type': 'Person',
         '@id': `${siteUrl}/#person`,
         name: 'Kelvin Appiah',
+        alternateName: ['Kelpy Shades', 'KelpyShades', 'Appiah Kelvin'],
         jobTitle: 'Software Engineer, Product Architect & Technical Lead',
         description:
-          'Self-taught Software Engineer and Technical Co-Founder & CEO at 404-Not-Null, leading engineering and product for Class-io and Groveh.',
+          'Self-taught Software Engineer and Technical Co-Founder & CEO at 404-Not-Null, leading engineering and product for Class-io and Groveh from Kumasi, Ghana.',
         url: siteUrl,
+        image: `${siteUrl}/profile.webp`,
+        sameAs: [
+          'https://github.com/KelpyShades',
+          'https://www.linkedin.com/in/kelvin-appiah',
+          'https://x.com/KelpyShades',
+          'https://404-Not-Null.vercel.app',
+        ],
         address: {
           '@type': 'PostalAddress',
           addressLocality: 'Kumasi',
+          addressRegion: 'Ashanti Region',
           addressCountry: 'GH',
         },
         alumniOf: {
           '@type': 'EducationalOrganization',
           name: 'University of Energy and Natural Resources',
+          alternateName: 'UENR',
         },
-        knowsAbout: [
-          'Flutter',
-          'Next.js',
-          'TypeScript',
-          'React',
-          'Convex',
-          'Supabase',
-          'H3 Hexagonal Indexing',
-          'Bayesian Rating Systems',
-          'Cloudflare Workers',
-          'Full Stack Development',
-          'Product Architecture',
-        ],
-        memberOf: [
+        worksFor: {
+          '@type': 'Organization',
+          '@id': 'https://404-Not-Null.vercel.app/#organization',
+          name: '404-Not-Null',
+          url: 'https://404-Not-Null.vercel.app',
+        },
+        founder: [
           {
             '@type': 'Organization',
             name: '404-Not-Null',
             url: 'https://404-Not-Null.vercel.app',
           },
           {
-            '@type': 'Organization',
+            '@type': 'SoftwareApplication',
             name: 'Class-io',
             url: 'https://classioedu.com',
           },
           {
-            '@type': 'Organization',
+            '@type': 'SoftwareApplication',
             name: 'Groveh',
             url: 'https://groveh.app',
           },
+        ],
+        knowsAbout: [
+          'Flutter',
+          'Dart',
+          'Next.js',
+          'TypeScript',
+          'React',
+          'Expo',
+          'Convex',
+          'Supabase',
+          'H3 Hexagonal Geospatial Indexing',
+          'Bayesian Rating Systems',
+          'Cloudflare Workers',
+          'Full Stack Development',
+          'Product Architecture',
+          'Mobile GPS Anti-Spoofing',
+          'Distributed Systems',
+          'Software Engineering',
         ],
       },
       {
@@ -183,12 +203,16 @@ export default function RootLayout({
         '@id': `${siteUrl}/#website`,
         url: siteUrl,
         name: 'Kelvin Appiah',
-        alternateName: 'KelpyShades',
+        alternateName: ['Kelpy Shades', 'KelpyShades', 'Kelvin Appiah'],
         description:
-          'Portfolio of Kelvin Appiah - Software Engineer, Product Architect & Technical Lead.',
+          'Official portfolio of Kelvin Appiah (KelpyShades) — Software Engineer, Product Architect & Technical Lead.',
         publisher: {
           '@id': `${siteUrl}/#person`,
         },
+        author: {
+          '@id': `${siteUrl}/#person`,
+        },
+        inLanguage: 'en-US',
       },
     ],
   };

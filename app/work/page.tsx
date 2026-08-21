@@ -18,11 +18,21 @@ export const metadata: Metadata = {
     url: `${siteUrl}/work`,
     title: 'Work — Kelvin Appiah',
     description: 'Selected case studies and production software built by Kelvin Appiah.',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Kelvin Appiah - Selected Work',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Work — Kelvin Appiah',
     description: 'Selected case studies and production software built by Kelvin Appiah.',
+    images: ['/og-image.png'],
+    creator: '@KelpyShades',
   },
 };
 
@@ -31,10 +41,45 @@ export default function WorkIndex() {
 
   const workJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'CollectionPage',
-    name: "Kelvin Appiah's Work & Case Studies",
-    url: `${siteUrl}/work`,
-    description: 'Selected case studies and production software built by Kelvin Appiah.',
+    '@graph': [
+      {
+        '@type': 'CollectionPage',
+        '@id': `${siteUrl}/work#page`,
+        name: "Kelvin Appiah's Work & Engineering Case Studies",
+        url: `${siteUrl}/work`,
+        description: 'Selected case studies and production software built by Kelvin Appiah (KelpyShades).',
+        author: {
+          '@type': 'Person',
+          '@id': `${siteUrl}/#person`,
+          name: 'Kelvin Appiah',
+          url: siteUrl,
+        },
+        publisher: {
+          '@type': 'Person',
+          '@id': `${siteUrl}/#person`,
+          name: 'Kelvin Appiah',
+          url: siteUrl,
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${siteUrl}/work#breadcrumb`,
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: siteUrl,
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Work',
+            item: `${siteUrl}/work`,
+          },
+        ],
+      },
+    ],
   };
 
   return (

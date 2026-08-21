@@ -26,6 +26,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = projects.find((p) => p.slug === slug);
   if (!project) return {};
 
+  const ogImage = project.imageSrc ? `${siteUrl}${project.imageSrc}` : `${siteUrl}/og-image.png`;
+
   return {
     title: project.metaTitle,
     description: project.metaDescription,
@@ -33,15 +35,25 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       canonical: `${siteUrl}/work/${slug}`,
     },
     openGraph: {
-      type: 'website',
+      type: 'article',
       url: `${siteUrl}/work/${slug}`,
       title: project.metaTitle,
       description: project.metaDescription,
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: project.imageAlt || project.title,
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: project.metaTitle,
       description: project.metaDescription,
+      images: [ogImage],
+      creator: '@KelpyShades',
     },
   };
 }
@@ -58,17 +70,87 @@ export default async function ProjectCaseStudyPage({ params }: Props) {
 
   const projectJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'SoftwareApplication',
-    name: project.title,
-    operatingSystem: 'Android, iOS, Web',
-    applicationCategory: 'SoftwareApplication',
-    offers: {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'USD',
-    },
-    description: project.metaDescription,
-    url: project.linkHref,
+    '@graph': [
+      {
+        '@type': 'SoftwareApplication',
+        '@id': `${siteUrl}/work/${slug}#software`,
+        name: project.title,
+        operatingSystem: 'Android, iOS, Web',
+        applicationCategory: project.category || 'SoftwareApplication',
+        offers: {
+          '@type': 'Offer',
+          price: '0',
+          priceCurrency: 'USD',
+        },
+        description: project.metaDescription,
+        url: project.linkHref,
+        image: project.imageSrc ? `${siteUrl}${project.imageSrc}` : `${siteUrl}/og-image.png`,
+        author: {
+          '@type': 'Person',
+          '@id': `${siteUrl}/#person`,
+          name: 'Kelvin Appiah',
+          url: siteUrl,
+        },
+        creator: {
+          '@type': 'Person',
+          '@id': `${siteUrl}/#person`,
+          name: 'Kelvin Appiah',
+          url: siteUrl,
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: '404-Not-Null',
+          url: 'https://404-Not-Null.vercel.app',
+        },
+      },
+      {
+        '@type': 'TechArticle',
+        '@id': `${siteUrl}/work/${slug}#case-study`,
+        headline: `${project.title} — Architecture & Technical Case Study`,
+        description: project.metaDescription,
+        url: `${siteUrl}/work/${slug}`,
+        image: project.imageSrc ? `${siteUrl}${project.imageSrc}` : `${siteUrl}/og-image.png`,
+        author: {
+          '@type': 'Person',
+          '@id': `${siteUrl}/#person`,
+          name: 'Kelvin Appiah',
+          url: siteUrl,
+        },
+        publisher: {
+          '@type': 'Person',
+          '@id': `${siteUrl}/#person`,
+          name: 'Kelvin Appiah',
+          url: siteUrl,
+        },
+        about: {
+          '@id': `${siteUrl}/work/${slug}#software`,
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${siteUrl}/work/${slug}#breadcrumb`,
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: siteUrl,
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Work',
+            item: `${siteUrl}/work`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: project.title,
+            item: `${siteUrl}/work/${slug}`,
+          },
+        ],
+      },
+    ],
   };
 
   return (

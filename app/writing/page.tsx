@@ -32,6 +32,7 @@ export const metadata: Metadata = {
     title: 'Writing — Kelvin Appiah',
     description: WritingPageContent.subtitle,
     images: ['/og-image.png'],
+    creator: '@KelpyShades',
   },
 };
 
@@ -40,15 +41,45 @@ export default function WritingIndex() {
 
   const blogJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Blog',
-    name: "Kelvin Appiah's Writing",
-    url: `${siteUrl}/writing`,
-    description: WritingPageContent.subtitle,
-    publisher: {
-      '@type': 'Person',
-      name: 'Kelvin Appiah',
-      url: siteUrl,
-    },
+    '@graph': [
+      {
+        '@type': 'Blog',
+        '@id': `${siteUrl}/writing#blog`,
+        name: "Kelvin Appiah's Technical Essays & Writing",
+        url: `${siteUrl}/writing`,
+        description: WritingPageContent.subtitle,
+        author: {
+          '@type': 'Person',
+          '@id': `${siteUrl}/#person`,
+          name: 'Kelvin Appiah',
+          url: siteUrl,
+        },
+        publisher: {
+          '@type': 'Person',
+          '@id': `${siteUrl}/#person`,
+          name: 'Kelvin Appiah',
+          url: siteUrl,
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${siteUrl}/writing#breadcrumb`,
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: siteUrl,
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Writing',
+            item: `${siteUrl}/writing`,
+          },
+        ],
+      },
+    ],
   };
 
   return (
