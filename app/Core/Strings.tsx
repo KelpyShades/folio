@@ -135,7 +135,7 @@ export const FooterContent = {
     },
     {
       label: 'X (Twitter) ↗',
-      href: 'https://x.com/KelpyShades',
+      href: 'https://x.com/appiah_kelvin_',
     },
   ],
 };

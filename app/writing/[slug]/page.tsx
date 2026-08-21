@@ -88,7 +88,7 @@ export default async function ArticlePage({ params }: Props) {
           sameAs: [
             'https://github.com/KelpyShades',
             'https://www.linkedin.com/in/kelvin-appiah',
-            'https://x.com/KelpyShades',
+            'https://x.com/appiah_kelvin_',
           ],
         },
         publisher: {

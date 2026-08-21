@@ -142,7 +142,7 @@ export default function RootLayout({
         sameAs: [
           'https://github.com/KelpyShades',
           'https://www.linkedin.com/in/kelvin-appiah',
-          'https://x.com/KelpyShades',
+          'https://x.com/appiah_kelvin_',
           'https://404-Not-Null.vercel.app',
         ],
         address: {
