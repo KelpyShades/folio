@@ -1,9 +1,0 @@
-# robots.txt for Kelvin Appiah Portfolio
-# https://kelpyshades.com
-
-User-agent: *
-Allow: /
-
-# Sitemap
-Sitemap: https://kelpyshades.com/sitemap.xml
-

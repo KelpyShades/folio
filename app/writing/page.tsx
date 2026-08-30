@@ -5,7 +5,7 @@ import { FaChevronLeft } from 'react-icons/fa6';
 import { WritingPageContent } from '@/app/Core/Strings';
 import { getSortedPostsData } from '@/lib/posts';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://kelpyshades.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.kelpyshades.com';
 
 export const metadata: Metadata = {
   title: 'Writing — Kelvin Appiah',

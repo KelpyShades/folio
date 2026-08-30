@@ -4,7 +4,7 @@ import Script from 'next/script';
 import { FaChevronLeft } from 'react-icons/fa6';
 import { HowIWorkPageContent } from '@/app/Core/Strings';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://kelpyshades.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.kelpyshades.com';
 
 export const metadata: Metadata = {
   title: 'How I Work — Kelvin Appiah',

@@ -7,7 +7,7 @@ import { FaChevronLeft, FaLink } from 'react-icons/fa6';
 
 import { getProjectData, getSortedProjectsData, type Project } from '@/lib/projects';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://kelpyshades.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.kelpyshades.com';
 
 interface Props {
   params: Promise<{ slug: string }>;

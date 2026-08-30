@@ -3,7 +3,7 @@ import { getSortedPostsData } from "@/lib/posts";
 import { getSortedProjectsData } from "@/lib/projects";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-	const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://kelpyshades.com";
+	const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.kelpyshades.com";
 	
 	const staticRoutes: MetadataRoute.Sitemap = [
 		{

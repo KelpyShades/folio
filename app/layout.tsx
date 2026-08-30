@@ -20,7 +20,7 @@ const poppins = Poppins({
   variable: '--font-poppins',
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://kelpyshades.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.kelpyshades.com';
 const siteName = 'Kelvin Appiah';
 
 export const metadata: Metadata = {

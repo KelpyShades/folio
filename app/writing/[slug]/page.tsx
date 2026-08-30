@@ -8,7 +8,7 @@ import { WritingPageContent } from '@/app/Core/Strings';
 import { getPostData, getSortedPostsData, type Post } from '@/lib/posts';
 import { ShareButtons } from './ShareButtons';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://kelpyshades.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.kelpyshades.com';
 
 interface Props {
   params: Promise<{ slug: string }>;
