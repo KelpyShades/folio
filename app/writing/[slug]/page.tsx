@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: post.description,
       images: [
         {
-          url: '/og-image.png',
+          url: `/writing/${slug}/opengraph-image`,
           width: 1200,
           height: 630,
           alt: post.title,
@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: 'summary_large_image',
       title: post.title,
       description: post.description,
-      images: ['/og-image.png'],
+      images: [`/writing/${slug}/opengraph-image`],
       creator: '@KelpyShades',
     },
   };
@@ -77,7 +77,7 @@ export default async function ArticlePage({ params }: Props) {
         description: post.description,
         datePublished: new Date(post.date).toISOString(),
         dateModified: new Date(post.date).toISOString(),
-        image: `${siteUrl}/og-image.png`,
+        image: `${siteUrl}/writing/${slug}/opengraph-image`,
         inLanguage: 'en-US',
         author: {
           '@type': 'Person',

@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const project = projects.find((p) => p.slug === slug);
   if (!project) return {};
 
-  const ogImage = project.imageSrc ? `${siteUrl}${project.imageSrc}` : `${siteUrl}/og-image.png`;
+  const ogImage = `/work/${slug}/opengraph-image`;
 
   return {
     title: project.metaTitle,
@@ -84,7 +84,7 @@ export default async function ProjectCaseStudyPage({ params }: Props) {
         },
         description: project.metaDescription,
         url: project.linkHref,
-        image: project.imageSrc ? `${siteUrl}${project.imageSrc}` : `${siteUrl}/og-image.png`,
+        image: `${siteUrl}/work/${slug}/opengraph-image`,
         author: {
           '@type': 'Person',
           '@id': `${siteUrl}/#person`,
@@ -109,7 +109,7 @@ export default async function ProjectCaseStudyPage({ params }: Props) {
         headline: `${project.title} — Architecture & Technical Case Study`,
         description: project.metaDescription,
         url: `${siteUrl}/work/${slug}`,
-        image: project.imageSrc ? `${siteUrl}${project.imageSrc}` : `${siteUrl}/og-image.png`,
+        image: `${siteUrl}/work/${slug}/opengraph-image`,
         author: {
           '@type': 'Person',
           '@id': `${siteUrl}/#person`,

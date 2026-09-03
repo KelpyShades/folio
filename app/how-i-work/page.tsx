@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     description: HowIWorkPageContent.leadParagraph,
     images: [
       {
-        url: '/og-image.png',
+        url: '/how-i-work/opengraph-image',
         width: 1200,
         height: 630,
         alt: 'How Kelvin Appiah Works — Operating Philosophy',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'How I Work — Kelvin Appiah',
     description: HowIWorkPageContent.leadParagraph,
-    images: ['/og-image.png'],
+    images: ['/how-i-work/opengraph-image'],
     creator: '@KelpyShades',
   },
 };
@@ -44,7 +44,7 @@ export default function HowIWork() {
         '@id': `${siteUrl}/how-i-work#article`,
         headline: 'How I Work — Engineering & Operational Philosophy',
         description: HowIWorkPageContent.leadParagraph,
-        image: `${siteUrl}/og-image.png`,
+        image: `${siteUrl}/how-i-work/opengraph-image`,
         author: {
           '@type': 'Person',
           '@id': `${siteUrl}/#person`,
