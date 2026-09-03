@@ -1,6 +1,6 @@
 ---
 title: "Free First, Charge Later: Why the Habit Model Breaks at Scale"
-description: "What our team missed about free-then-charge: payment has to be earned before it is asked for, and habit is not evidence of value."
+description: "A realization, not yet a decision: habit is not evidence of value, and the paid tier has to be new value worth paying for before any habit exists."
 date: "August 31, 2026"
 readTime: "5 min read"
 ---
@@ -8,6 +8,8 @@ readTime: "5 min read"
 "Free first, charge later" is one of the most familiar playbooks in software: give every feature away, let users use, give feedback and build their routines around the product, then start charging once it is woven into their lives. The hope is that people will pay rather than give up something they now depend on.
 
 Notice what that plan depends on. Not that the product is worth paying for but by the time payment arrives, leaving will be harder than staying. Habit is being used as a stand-in for value. The two look identical from the inside: same daily use, same routines. But one is appreciation and the other is inertia, and a paywall can tell the difference instantly, because only one of them converts.
+
+That is one version of free-then-charge, the version worth questioning. There are others. Plenty of products stay free early because the product is unfinished and charging would slow the feedback down, and the best freemium models never paywall what was free in the first place, they charge for new value on top of it: more scale, more users, heavier workflows. Two-sided platforms often cannot charge before liquidity exists or one side never arrives. Those are legitimate. The trap is narrower and easier to spot: charging for the same value people already have, just because by now they cannot easily leave. This piece is about that version.
 
 In our case the plan had two requirements we had not accounted for, and missing either one made the eventual paywall look like a bait and switch. Underneath both was the same mistake: we had asked whether users would tolerate paying, never whether we had built anything they would want to pay for.
 
@@ -35,16 +37,16 @@ The deeper problem surfaced when we went looking for what would eventually be wo
 
 Nothing held. The habit had formed around things we could not justify charging for, because people already had versions of them elsewhere. We had months of usage as evidence, and none of it was evidence of value. Usage tells you people came back. It does not tell you they would have paid.
 
-### The replacement
+### Where this leaves us
 
-Our working replacement flips the sequence: identify what would be worth paying for on day one. Value that is obvious to someone who has never heard of us, before any habit exists and make everything else permanently, explicitly free. We are still researching what carries that weight.
+To be clear, none of this is a settled decision. It is something I realized while thinking through the model, and the team has not taken it up yet. What we are leaning toward is the freemium shape: a base that stays free, with better features on a paid tier. The realization above is the caution I want attached to that plan, because the shape alone does not save it. The paid tier still has to be new value that justifies itself to someone who has never heard of us, before any habit exists, and not a paywalled version of things people already get free elsewhere. We are still researching what carries that weight.
 
-The free base could then become the marketing. Platforms charging listing fees and monthly subscriptions would be competing against a free base. The revenue would have to come from standalone value that justifies itself to the very first user. That is a higher bar than a paywall. It is also the only bar that means anything: if the answer to "why would anyone pay for this?" only works on someone who already depends on you, it isn't an answer.
+The free base could then become the marketing. Platforms charging listing fees and monthly subscriptions would be competing against a free base. The revenue would have to come from standalone value that justifies itself to the very first user. That is a higher bar than a paywall, and we have not cleared it yet. It is also the only bar that means anything: if the answer to "why would anyone pay for this?" only works on someone who already depends on you, it isn't an answer.
 
 ### What we are checking now
 
 - We should have told users payment was coming, then checked whether that conversation could survive beyond the first small group.
 - We should have asked whether the features earmarked for future charging were things people already got free elsewhere.
-- We are now looking for value a seller in our market can see before a habit exists. That research is not finished.
+- We are now looking for value a seller in our market can see before a habit exists, and it has to be new value, not a paid version of what the free base already does. That research is not finished.
 
 Waiting for habits to form before charging anything left us researching the business model during exams and luckily we found the problem before the paywall shipped.
